@@ -604,8 +604,15 @@ const findArray = cara.find((name)=>{
     }
 })
 
-
 // ● Every
+// every means every elements should be true according to condition 
+
+const everyArray = foreachArray.every((number)=>{
+    return number%2==0
+})
+console.log(everyArray) // false
+
+
 // ● Some
 // ● Fill method
 // ● Splice method
