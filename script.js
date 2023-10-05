@@ -625,6 +625,12 @@ const someArray = foreachArray.some((number)=>{
 console.log(someArray)
 
 // ● Fill method
+// console.log("ARRAY METHOD ----------- FILL METHOD IS USED TO FILL THE VALUE BY OUR OWN THEY CHANGE THE ORIGINAL ARRAY WE CAN ADD VALUE FORM START TO END INDEX ")
+
+const fillArray = foreachArray.fill(-7,4,8)
+console.log(fillArray)
+
+
 // ● Splice method
 
 
