@@ -613,15 +613,6 @@ const everyArray = foreachArray.every((number)=>{
 console.log(everyArray) // false
 
 
-// ● Some
-// must be one element stand on the condition 
-
-const someArray = foreachArray.some((number)=>{
-    return number%2==0
-})
-
-console.log(someArray)
-
 // ● Fill method
 // ● Splice method
 
