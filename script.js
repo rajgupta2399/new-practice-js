@@ -631,11 +631,8 @@ const fillArray = foreachArray.fill(-7,4,8)
 console.log(fillArray)
 
 
-// ● Splice method
-
-
-
 // More useful things
+
 // ● Iterables
 // ● Sets
 // ● Maps
