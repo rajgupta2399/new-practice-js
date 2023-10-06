@@ -694,12 +694,12 @@ const oldobjAssign = Object.assign(student1,student2)
 console.log(oldobjAssign)
 
 // ● Optional chaining
-
-
+// op
 
 
 // Object Oriented JavaScript / Prototypal
 // Inheritance
+
 // ● Methods
 // ● This keyword, Window object
 // ● Call , apply and bind method
