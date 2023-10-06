@@ -630,7 +630,70 @@ console.log(someArray)
 const fillArray = foreachArray.fill(-7,4,8)
 console.log(fillArray)
 
+// ● Splice method
 
+// More useful things
+// ● Iterables
+// those data-type we can run loop easily called iterables 
+// for example :- array,stirng
+
+const iterateArray = [1,23,,4,5,6,7,8,9,10]
+for(p in iterateArray){
+    console.log(iterateArray[p])
+}
+
+const hobby = "cricket"
+for(hobbies in hobby){
+    console.log(hobby[hobbies])
+}
+
+// ● Set
+// adding elements in set use ------- add method
+const removeDuplicates = [1,2,3,3,5,2,7,4,2,9,1,7,3,5,2,9]
+console.log(removeDuplicates.length)
+const set = new Set(removeDuplicates)
+console.log(set)
+
+
+// ● Maps
+// map is just like the object but inside object we dont run the loop but in map case we can the run loop
+
+// adding key value pairs in map use ----- set
+// getting key value pairs in map use ---- get 
+
+const student1 = {
+    studentId1 : 2499,
+    firstName1 : "sagar"
+}
+
+const student2 = {
+    studentId : 2399,
+    firstName : "raj"
+}
+
+// for(st of student1){
+//     console.log(student1[st])
+// }
+
+const maps = new Map()
+maps.set(student1,student2)
+console.log(maps)
+
+for(obj of maps){
+    console.log(maps)
+}
+
+
+// ● Object.assign
+// same as the spread operator 
+
+const newobjAssign = {...maps}
+console.log(...maps)
+
+const oldobjAssign = Object.assign(student1,student2)
+console.log(oldobjAssign)
+
+// ● Optional chaining
 
 
 // Object Oriented JavaScript / Prototypal
