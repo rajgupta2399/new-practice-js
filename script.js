@@ -630,6 +630,8 @@ console.log(someArray)
 const fillArray = foreachArray.fill(-7,4,8)
 console.log(fillArray)
 
+// ● Splice method
+
 // More useful things
 // ● Iterables
 // those data-type we can run loop easily called iterables 
