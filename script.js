@@ -633,6 +633,7 @@ console.log(fillArray)
 // ● Splice method
 
 // More useful things
+
 // ● Iterables
 // those data-type we can run loop easily called iterables 
 // for example :- array,stirng
