@@ -701,6 +701,8 @@ console.log(oldobjAssign)
 // Inheritance
 
 // ● Methods
+// when object key has the function in their key called methods...later.
+
 // ● This keyword, Window object
 // ● Call , apply and bind method
 // ● Some warnings
