@@ -700,23 +700,213 @@ console.log(oldobjAssign)
 // Inheritance
 
 // ● Methods
+// when the key have the function in their value we can say the mwthods 
+// for example:-
+
+const persons = {
+    userName : "sagar kumar",
+    userAge : 25,
+    about : function(){
+        console.log(`firstname is ${this.userName} and the age is ${this.userAge}`)
+    }
+}
+
+console.log(persons)
+console.log(persons.userName)
+persons.about()
+
+
 // ● This keyword, Window object
+// this keyword shows the window object 
+console.log(this) 
+// Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+
 // ● Call , apply and bind method
+// call
+// when we call the function inside the object by using call keyword and the call keyword represent this.object 
+
+const persons1 = {
+    userName  : "raj",
+    userAge : 18,
+    about : function(hobby){
+        console.log(`username is ${this.userName} and the hobby is ${hobby}`)
+    },
+    address : function(district,nearby,hno){
+        console.log(`your name is ${this.userName} and your district is ${district} and the nearby location is ${nearby} and the house number is ${hno}`)
+    }
+}
+const persons2 = {
+    userName : "priyanshu", 
+    userage : 19
+}
+
+const persons3 = {
+    userName : "priyanshi", 
+    userage : 9
+}
+
+persons1.about.call(persons1,"cricket")
+persons1.about.call(persons2,"dancing")
+
+// apply : same working as call method but we can pas the args inside the array
+
+persons1.address.apply(persons3,["pooth-khurd",'radha-krishan Mandir' ,'D-51'])
+
+// bind 
+
+const bind = persons1.about.bind(persons2,"euros")
+bind()
+
 // ● Some warnings
 // ● This inside arrow functions
+// this keyword inside arrow function will be the window 
+const persons4  ={
+    userName : "priyansh", 
+    userage : 19,
+    hobby : ()=>{
+        console.log(`hello ${this.userName}`)
+    }
+}
+persons4.hobby.call(persons1)
+// undefined will print
+
+
 // ● Short syntax for methods
 // ● Factory functions & discuss some memory related problems
+function userData(firstName,lastName,age,email){
+    let user = {}
+    user.firstName = firstName
+    user.lastName = lastName
+    user.age = age
+    user.email = email
+    user.about = function(){
+        console.log(`hello ${this.firstName} and the last name is ${this.lastName}`)
+    }
+    return user;
+}
+
+const User = userData("raj","kumar",24,"rajkumar2499@gmail.com")
+User.about()
+
+
 // ● First solution to that problem
+
+console.log("------------- proto ---------")
+const proto  ={
+    about : function(){
+        console.log(`hello ${this.firstName} and the last name is ${this.lastName} and your age is ${this.age}`)
+    },
+    addresses : function(){
+        console.log(`hello ${this.firstName} and your address is ${this.address}`)
+    },
+    emails : function(){
+        console.log(`your email is ${this.email}`)
+    }
+}
+
+function userData1(firstName,lastName,age,email,address){
+    const user = Object.create(proto);
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.age = age;
+    user.email = email;
+    user.address = address;
+
+    return user;
+}
+
+const User1 = userData1("sagar",'gupta',25,"sagarkumar2499@gmail.com","Bawana")
+
+User1.emails()
+
 // ● Why that solution isn’t that great
+
 // ● What is __proto__ , [[prototype]]
 // ● What is prototype
-// ● Use prototype
-// ● New keyword
-// ● Constructor function with new keyword
 // ● More discussion about proto and prototype
+// ● Use prototype
+console.log("---------- prototype -------")
+function userData2(firstName,lastName,age,email){
+    const user = Object.create(userData2.prototype)
+    user.firstName = firstName;
+    user.lastName = lastName;
+    user.age =age ;
+    user.email =email
+
+    userData2.prototype.about = function(){
+        console.log(`hello ${this.firstName} and your email is ${this.email}`)
+    }
+
+    return user
+}
+
+const user5 = userData2("priyanshu","rohilla",45,"priyanshu@gmail.com")
+user5.about()
+
+// ● New keyword
+
+function userData3(firstName,lastName,age,email,address,friend){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.email = email;
+    this.address = address,
+    this.friend = friend,
+
+    userData3.prototype.about = function(){
+        console.log(`hello ${this.firstName} and your friend name is ${this.friend}`)
+    }
+
+    return this;
+}
+
+const User3 = new userData3("sarjun",'kumar',40,'sarjunkumar2499@gmail.com',"bawana",'rajan kumar gupta')
+User3.about()
+
+
+
+// ● Constructor function with new keyword
 // ● Class keyword
+class createUserData{
+    constructor(firstName,lastName,age,address){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.address =address;
+    }
+
+    about(){
+        return `hello ${this.firstName} and your address is ${this.address}`
+    }
+}
+
+const User4 = new createUserData("raj",'kumar',19,"Rohini Sec-21")
+console.log(User4.about())
+
 // ● Example using class keyword
 // ● Super keyword
+
+class createUserData1 extends createUserData{
+    constructor(firstName,lastName,age,address,friends){
+        super(firstName,lastName,age,address)
+        this.friends = friends
+    }
+
+    aboutFriend(){
+        return `hello ${this.firstName} ${this.lastName} and your firends name is ${this.friends}`
+    }
+
+    about(){
+        return `hello ${this.firstName} and your address is ${this.address}and your friends name is ${this.friends}`
+    }
+}
+
+const User5 = new createUserData1("rajan",'kumar',18,"rohini sec-20","mukesh")
+console.log(User5.aboutFriend())
+console.log(User5.about())
+
+
 // ● Method overriding
 // ● Getters and setters
 // ● Static methods and properties
