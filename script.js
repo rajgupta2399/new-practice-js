@@ -633,6 +633,7 @@ console.log(fillArray)
 // ● Splice method
 
 // More useful things
+
 // ● Iterables
 // those data-type we can run loop easily called iterables 
 // for example :- array,stirng
@@ -694,29 +695,12 @@ const oldobjAssign = Object.assign(student1,student2)
 console.log(oldobjAssign)
 
 // ● Optional chaining
-// op
 
 
 // Object Oriented JavaScript / Prototypal
 // Inheritance
 
 // ● Methods
-// when the key have the function in their value we can say the mwthods 
-// for example:-
-
-const persons = {
-    userName : "sagar kumar",
-    userAge : 25,
-    about : function(){
-        console.log(`firstname is ${this.userName} and the age is ${this.userAge}`)
-    }
-}
-
-console.log(persons)
-console.log(persons.userName)
-persons.about()
-
-
 // ● This keyword, Window object
 // this keyword shows the window object 
 console.log(this) 
