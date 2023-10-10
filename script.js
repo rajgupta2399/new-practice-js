@@ -701,6 +701,22 @@ console.log(oldobjAssign)
 // Inheritance
 
 // ● Methods
+// when the key have the function in their value we can say the mwthods 
+// for example:-
+
+const persons = {
+    userName : "sagar kumar",
+    userAge : 25,
+    about : function(){
+        console.log(`firstname is ${this.userName} and the age is ${this.userAge}`)
+    }
+}
+
+console.log(persons)
+console.log(persons.userName)
+persons.about()
+
+
 // ● This keyword, Window object
 // this keyword shows the window object 
 console.log(this) 
@@ -895,3 +911,31 @@ console.log(User5.about())
 // ● Method overriding
 // ● Getters and setters
 // ● Static methods and properties
+
+
+// Asynchronous JavaScript
+// ● Is Javascript a synchronous or asynchronous programming language ?
+// ● SetTimeout()
+// ● SetTimeout() with 0 millisecond
+// ● Callback Queue
+// ● SetInterval and create little project with setInterval
+// ● Understand callbacks in general
+// ● Callbacks in asynchronous programming
+// ● Callback Hell and Pyramid of doom
+// ● Intro to promises
+// ● Microtask Queue
+// ● Function that returns promise
+// ● Promise and settimeout
+// ● Promise.resolve and more about then method
+// ● Convert nested Callbacks to flat code using promises
+// ● Intro to Ajax, HTTP Request
+// ● XHR requests
+// ● Error handling in XHR requests
+// ● XHR request Chaining
+// ● Promisifying XHR requests and chaining using then method
+// ● Fetch API
+// ● Error Handling in Fetch API
+// ● Consume Promises with async and Await
+// ● Split code into multiple files using ES6 modules.
+// ● Congratulations
+// ● Now you know javascript in Great Details
